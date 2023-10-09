@@ -1,9 +1,9 @@
 # project-55XO7
 
 HARDWARE 
- - senzor: PIEZZO SENZOR
- - arduino: UNO/NANO
- - 
+ - 5 LED Diod 
+ - HXD Buzzer
+ - Arduino nano
 
 POSTUP
  - zanalizovat hardware
@@ -15,9 +15,9 @@ POSTUP
  - testování s kodem
 
 METRONOM
- - blikajici ledky vedle sebe spajene na piny pres rezistory (20OHM)
+ - blikajici ledky vedle sebe spajene na piny pres rezistory (20 OHM)
  - zaklad 120 BPM -> 2 bliknutí za 1 vteřinu
- - reproduktor HDX
+ - reproduktor HXD
 
 
 
