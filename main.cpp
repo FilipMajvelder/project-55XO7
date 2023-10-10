@@ -57,7 +57,7 @@ void loop() {
     } else {
       currentBeat--;
       if (currentBeat == 0) {
-        increasing = true; /
+        increasing = true; 
       }
     }
   }
