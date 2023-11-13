@@ -1,0 +1,41 @@
+#include <MD_Parola.h>
+#include <MD_MAX72xx.h>
+#include <SPI.h>
+
+int i = 0;
+
+textEffect_t texteffect[] =
+{
+ 
+ 
+  PA_SCROLL_LEFT,
+};
+
+#define HARDWARE_TYPE MD_MAX72XX::FC16_HW
+
+#define MAX_DEVICES 1
+#define CS_PIN 3
+
+MD_Parola myDisplay = MD_Parola(HARDWARE_TYPE, CS_PIN, MAX_DEVICES);
+
+void setup() {
+  myDisplay.begin();
+  myDisplay.setIntensity(11);
+  myDisplay.setTextAlignment(PA_CENTER);
+  myDisplay.setPause(400);
+  myDisplay.setSpeed(90);
+  myDisplay.displayClear();
+}
+void loop()
+{
+  if (myDisplay.displayAnimate()) {
+    if (i < sizeof(texteffect)) {
+      i++;
+    }
+    else {
+      i = 0;
+    }
+    myDisplay.displayText("Creative A / Subscribe - Like!", myDisplay.getTextAlignment(), myDisplay.getSpeed(), myDisplay.getPause(), texteffect[i], texteffect[i]);
+    myDisplay.displayReset();
+  }
+}
