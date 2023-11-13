@@ -1,41 +1,27 @@
-#include <MD_Parola.h>
 #include <MD_MAX72xx.h>
 #include <SPI.h>
 
-int i = 0;
-
-textEffect_t texteffect[] =
-{
- 
- 
-  PA_SCROLL_LEFT,
-};
-
 #define HARDWARE_TYPE MD_MAX72XX::FC16_HW
+#define MAX_DEVICES 4
+#define CLK_PIN   D5   // or SCK  D5
+#define DATA_PIN  D7 // or MOSI D7
+#define CS_PIN    D4  // or SS   D4
 
-#define MAX_DEVICES 1
-#define CS_PIN 3
+MD_MAX72XX mx = MD_MAX72XX(HARDWARE_TYPE, CS_PIN, MAX_DEVICES);   // SPI hardware interface
 
-MD_Parola myDisplay = MD_Parola(HARDWARE_TYPE, CS_PIN, MAX_DEVICES);
 
-void setup() {
-  myDisplay.begin();
-  myDisplay.setIntensity(11);
-  myDisplay.setTextAlignment(PA_CENTER);
-  myDisplay.setPause(400);
-  myDisplay.setSpeed(90);
-  myDisplay.displayClear();
-}
-void loop()
+unsigned char firstledfirstrow[8]={0b00000000, 0b11101110 , 0b00101010, 0b11101010, 0b10001010, 0b10101010, 0b11101110, 0b00000000};
+int i=0; 
+
+void setup() 
 {
-  if (myDisplay.displayAnimate()) {
-    if (i < sizeof(texteffect)) {
-      i++;
-    }
-    else {
-      i = 0;
-    }
-    myDisplay.displayText("Creative A / Subscribe - Like!", myDisplay.getTextAlignment(), myDisplay.getSpeed(), myDisplay.getPause(), texteffect[i], texteffect[i]);
-    myDisplay.displayReset();
-  }
+     mx.begin();
+}
+
+void loop() 
+{
+         for (int j=0; j<8; j++)
+         {
+          mx.setRow(i, j, firstledfirstrow[j]);   
+         }
 }
