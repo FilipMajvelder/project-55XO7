@@ -1,0 +1,20 @@
+#include <MD_Parola.h>
+#include <MD_MAX72xx.h>
+#include <SPI.h>
+
+#define HARDWARE_TYPE MD_MAX72XX::FC16_HW
+#define MAX_DEVICES 6
+#define CS_PIN D4
+
+MD_Parola myDisplay = MD_Parola(HARDWARE_TYPE, CS_PIN, MAX_DEVICES);
+
+void setup() {
+  myDisplay.begin();
+  myDisplay.setIntensity(5);
+  myDisplay.displayClear();
+}
+
+void loop() {
+  myDisplay.setTextAlignment(PA_CENTER);
+  myDisplay.print("120");
+}
