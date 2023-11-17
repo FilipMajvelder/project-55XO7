@@ -2,7 +2,7 @@
 #include <SPI.h>
 
 #define HARDWARE_TYPE MD_MAX72XX::FC16_HW
-#define MAX_DEVICES 4
+#define MAX_DEVICES 1
 #define CLK_PIN   D5   // or SCK  D5
 #define DATA_PIN  D7 // or MOSI D7
 #define CS_PIN    D4  // or SS   D4
