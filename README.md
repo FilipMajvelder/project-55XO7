@@ -20,9 +20,9 @@ POSTUP
  - zanalizovat kody                      ✓
  - načrtnout pájení a spojování HW       ✓
  - objednat hardware                     ✓
+ - testování s kodem
  - pájení
  - zapojování
- - testování s kodem
 
 METRONOM 1.0
  - blikajici ledky vedle sebe spajene na piny pres rezistory (20 OHM)
@@ -34,8 +34,6 @@ METRONOM 2.0
  - bzučák HDX pípající na každou dobu a mezi dobu
 
 
-
-WIFI TELEFON - inspirace https://randomnerdtutorials.com/esp8266-web-server-spiffs-nodemcu
 
    
    
