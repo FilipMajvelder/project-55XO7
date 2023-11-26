@@ -14,61 +14,31 @@ unsigned char treti[8] = {0x00, 0x00, 0x01, 0x01, 0x01, 0x01, 0x00, 0x00};
 unsigned char ctvrta[8] = {0x00, 0x00, 0x10, 0x10, 0x10, 0x10, 0x00, 0x00};
 unsigned char pata[8] = {0x00, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x00};
 
+void displayPattern(unsigned char pattern[8], int row)
+{
+  for (int i = 0; i < 8; i++)
+  {
+    mx.setRow(row, i, pattern[i]);
+  }
+  delay(500);
+  mx.clear();
+}
+
 void setup()
 {
   mx.begin();
   mx.control(MD_MAX72XX::INTENSITY, 0);
-  mx.clear(); // Vymazání displeje
+  mx.clear();
 }
 
 void loop()
 {
-  for (int row = 0; row < 8; row++)
-  {
-    mx.setRow(1, row, prvni[row]);
-  }
-  delay(500);
-  mx.clear();
-  for (int row = 0; row < 8; row++)
-  {
-    mx.setRow(1, row, druha[row]);
-  }
-  delay(500);
-  mx.clear();
-  for (int row = 0; row < 8; row++)
-  {
-    mx.setRow(1, row, treti[row]);
-  }
-  delay(500);
-  mx.clear();
-  for (int row = 0; row < 8; row++)
-  {
-    mx.setRow(0, row, ctvrta[row]);
-  }
-  delay(500);
-  mx.clear();
-  for (int row = 0; row < 8; row++)
-  {
-    mx.setRow(0, row, pata[row]);
-  }
-  delay(500);
-  mx.clear();
-  for (int row = 0; row < 8; row++)
-  {
-    mx.setRow(0, row, ctvrta[row]);
-  }
-  delay(500);
-  mx.clear();
-  for (int row = 0; row < 8; row++)
-  {
-    mx.setRow(1, row, treti[row]);
-  }
-  delay(500);
-  mx.clear();
-  for (int row = 0; row < 8; row++)
-  {
-    mx.setRow(1, row, druha[row]);
-  }
-  delay(500);
-  mx.clear();
+  displayPattern(prvni, 1);
+  displayPattern(druha, 1);
+  displayPattern(treti, 1);
+  displayPattern(ctvrta, 0);
+  displayPattern(pata, 0);
+  displayPattern(ctvrta, 0);
+  displayPattern(treti, 1);
+  displayPattern(druha, 1);
 }
