@@ -4,7 +4,7 @@ const int buttonPin = D2;
 const int speakerPin = D3;
 
 int bpm = 150;
-long beatInterval = 60000 / bpm
+long beatInterval = 60000 / bpm;
 
 bool isMetronomeRunning = false;
 bool lastButtonState = HIGH;
