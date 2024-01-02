@@ -20,7 +20,7 @@ POSTUP
  - zanalizovat kody                      ✓
  - načrtnout pájení a spojování HW       ✓
  - objednat hardware                     ✓
- - testování s kodem
+ - testování s kodem                     ✓
  - pájení
  - zapojování
 
