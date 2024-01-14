@@ -21,8 +21,8 @@ POSTUP
  - načrtnout pájení a spojování HW       ✓
  - objednat hardware                     ✓
  - testování s kodem                     ✓
- - pájení
- - zapojování
+ - pájení                                ✓
+ - zapojování                            ✓
 
 METRONOM 1.0
  - blikajici ledky vedle sebe spajene na piny pres rezistory (20 OHM)
