@@ -30,8 +30,9 @@ METRONOM 1.0
  - reproduktor HXD
 
 METRONOM 2.0
- - LED matice (BLIKAJICI LEKA -> PING PONG) a BPM ukazovač
+ - LED matice (Animace kyvadla -> PING PONG) a BPM ukazovač
  - bzučák HDX pípající na každou dobu a mezi dobu
+ - potenciomertr pro změnu BPM na metronomu
 
 
 
